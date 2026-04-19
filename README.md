@@ -1,18 +1,10 @@
-# Meu Projeto CI/CD (Python Sênior)
+# API CI/CD - Projeto Acadêmico
 
-Este é um projeto exemplo para demonstrar a implementação de pipelines de **CI (Integração Contínua)** e **CD (Entrega Contínua)** utilizando GitHub Actions.
+Este projeto demonstra um pipeline de DevOps completo com Python, FastAPI, GitHub Actions e Docker.
 
-## Funcionalidades
-- Soma de inteiros com validação de tipos.
-- Suite de testes unitários automatizada com `pytest`.
-- Relatórios de cobertura de testes.
+## Como rodar localmente (Docker)
+1. Build da imagem: `docker build -t api-cicd .`
+2. Run do container: `docker run -d -p 8000:8000 --name api-instance api-cicd`
 
-## Como rodar localmente
-1. Instale as dependências:
-   ```bash
-   pip install -r requirements.txt
-   ```
-2. Execute os testes:
-   ```bash
-   pytest
-   ```
+## Testes
+Rode `pytest` no terminal.
