@@ -1,8 +1,11 @@
-def calculate_sum(a: int, b: int) -> int:
-    """Calculates the sum of two integers."""
-    if not isinstance(a, int) or not isinstance(b, int):
-        raise TypeError("Inputs must be integers")
-    return a + b
+from fastapi import FastAPI
 
-if __name__ == "__main__":
-    print(f"Result of 5 + 3: {calculate_sum(5, 3)}")
+app = FastAPI()
+
+@app.get("/")
+def read_root():
+    return {"status": "online", "message": "API CI/CD funcional"}
+
+@app.get("/health")
+def health_check():
+    return {"status": "healthy"}
