@@ -25,6 +25,14 @@ jobs:
       - name: Run tests
         run: pytest
 
+      - name: Discord Notification
+        if: always()
+        uses: rjstone/discord-webhook-notify@v1
+        with:
+            severity: ${{ job.status }}
+            details: "O Pipeline de CI/CD terminou com status: ${{ job.status }}"
+            webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
+
   cd:
     needs: ci
     runs-on: ubuntu-latest
